@@ -1,9 +1,9 @@
 {
-  "name": "genetic-algorithm-js",
-  "version": "0.0.0",
+  "name": "string-evolver-ts",
+  "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "ng serve"
+    "start": "gulp build; gulp start;"
   },
   "private": true,
   "dependencies": {
