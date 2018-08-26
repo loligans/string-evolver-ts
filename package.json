@@ -3,12 +3,14 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "gulp build; gulp start;"
+    "start": "gulp build; gulp start;",
+    "install": "( [ ! -f ./string-evolver-ts ] && [ ! -f ./AlreadyInstalled ] && echo \"\" > ./AlreadyInstalled && npm install . && gulp build ) || echo \"SKIP: NON GIT SOURCE\""
   },
+  "main": "out/index.js",
+  "types": "out/index.d.ts",
   "private": true,
   "dependencies": {
-    "core-js": "^2.5.3",
-    "natives": "^1.1.4"
+    "core-js": "^2.5.3"
   },
   "devDependencies": {
     "@types/node": "^6.0.100",
@@ -22,6 +24,8 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-typescript": "^3.2.4",
     "gulp-uglify": "^3.0.0",
+    "merge-stream": "^1.0.1",
+    "natives": "^1.1.4",
     "nodemon": "^1.14.12",
     "ts-node": "~3.2.0",
     "tslint": "~5.9.1",

@@ -1,4 +1,4 @@
-import { GeneticAlgorithm } from './genetic-algorithm';
+import { GeneticAlgorithm } from './string-evolver';
 export class Candidate {
   public static readonly MinGene: number = 32;
   public static readonly MaxGene: number = 127;

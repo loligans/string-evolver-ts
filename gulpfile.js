@@ -6,22 +6,21 @@ var babel = require('gulp-babel');
 var uglify = require('gulp-uglify');
 var sourcemaps = require('gulp-sourcemaps');
 var clean = require('gulp-clean');
+var merge = require('merge-stream');
 var nodemon = require('gulp-nodemon');
 
-var serverTsProject = ts.createProject('./src/tsconfig.json');
 
 gulp.task('clean', () => {
   return gulp.src('./out/**/*', {read: false}).pipe(clean());
 });
 
 gulp.task('build', ['clean'], () => {
-  return serverTsProject.src()
-                        .pipe(sourcemaps.init())
-                        .pipe(serverTsProject())
-                        .js
-                        .pipe(babel({
-                          "presets": ['env']
-                        }))
+  var tsProject = ts.createProject('./src/tsconfig.json');
+  var tsResult = gulp.src(['src/**/*.ts'])
+                     .pipe(sourcemaps.init())
+                     .pipe(tsProject());
+  return merge(tsResult, tsResult.js)
+                        .pipe(babel({presets: ['env'], ignore: ['**/*.d.ts']}))
                         //.pipe(uglify())
                         .pipe(sourcemaps.write('.'))
                         .pipe(gulp.dest('./out'));
