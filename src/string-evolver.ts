@@ -1,5 +1,5 @@
 import { Candidate } from './candidate';
-export class GeneticAlgorithm {
+export class StringEvolver {
   private _Solution: string;
   public Population: Array<Candidate>;
   public Generation: number;
