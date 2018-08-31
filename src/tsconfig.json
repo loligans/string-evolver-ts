@@ -3,11 +3,12 @@
   "compilerOptions": {
     "outDir": "../out",
     "baseUrl": "./",
-    "module": "es2015",
+    "module": "commonjs",
     "sourceMap": true,
     "declaration": true,
     "moduleResolution": "node",
-    "target": "es6",
+    "target": "es5",
+    "downlevelIteration": true,
     "types": [
       "node"
     ],
@@ -15,8 +16,7 @@
       "../node_modules/@types"
     ],
     "lib": [
-      "es2017",
-      "dom"
+      "es2017"
     ]
   }
 }

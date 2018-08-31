@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp build; gulp start;",
-    "install": "( [ ! -f ./string-evolver-ts ] && [ ! -f ./AlreadyInstalled ] && echo \"\" > ./AlreadyInstalled && npm install . && gulp build ) || echo \"SKIP: NON GIT SOURCE\""
+    "postinstall": "tsc --build src/tsconfig.json"
   },
   "main": "out/index.js",
   "types": "out/index.d.ts",
