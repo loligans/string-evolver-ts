@@ -1,8 +1,10 @@
 {
   "compileOnSave": false,
+  "include": [
+    "src/**/*.ts"
+  ],
   "compilerOptions": {
-    "outDir": "../out",
-    "baseUrl": "./",
+    "outDir": "out",
     "module": "commonjs",
     "sourceMap": true,
     "declaration": true,

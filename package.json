@@ -4,7 +4,7 @@
   "license": "MIT",
   "scripts": {
     "start": "gulp build; gulp start;",
-    "postinstall": "tsc --build src/tsconfig.json"
+    "postinstall": "tsc"
   },
   "main": "out/index.js",
   "types": "out/index.d.ts",
